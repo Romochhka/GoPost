@@ -27,6 +27,7 @@ export default {
         alphaBlack30: "#0A11294d",
         alphaBlack45: "#0A112973",
         alphaBlack65: "#0A1129a6",
+        alphaBlack75: "#032341",
         alphaGreyBlurBg85: "#F6F7F8D9",
         primaryLightBlue: "#EDF1FF",
         primaryLightBlueHover: "#DDE5FF",
