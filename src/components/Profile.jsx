@@ -1,6 +1,7 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
 
-const Profile = ({}) => {
+const Profile = () => {
 
 	const getMenuLabel = (item) => {
 		const labels = {
@@ -13,10 +14,12 @@ const Profile = ({}) => {
 		};
 		return labels[item] || "";
 	};
+	const navigate = useNavigate('/change-profile')
+
 
 	return (
 		<main className="w-full bg-neutralWhite">
-			<button
+			<button onClick={() => navigate("/change-profile")}
 				className="mt-6 w-full bg-primaryLightBlue hover:bg-primaryLightBlueHover border-none py-4 rounded-lg text-center text-primarySkyBlue font-medium cursor-pointer uppercase text-[14px] tracking-wide"
 			>
 				Редактировать профиль
@@ -24,7 +27,9 @@ const Profile = ({}) => {
 
 			<ul className="w-full flex flex-col mt-6 gap-6 text-neutralBlack">
 				{["history", "openCard", "support", "settings", "password", "exit"].map((item, index) => (
-					<li key={index} className="flex items-center justify-between gap-4">
+					<li key={index} className="flex items-center justify-between gap-4"
+						onClick={() => item === "password" && navigate("/change-password")}
+					>
 						<img
 							src={`./${item}.svg`}
 							alt={item}
